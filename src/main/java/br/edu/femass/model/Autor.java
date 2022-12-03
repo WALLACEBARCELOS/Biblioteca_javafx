@@ -1,28 +1,29 @@
 package br.edu.femass.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
+
 
 @Entity
 public class Autor {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
     private String nome;
     private String sobrenome;
     private String nacionalidade;
 
 
-    public Autor()
-    {
-    }
     public Autor(String nome, String sobrenome, String nacionalidade) {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.nacionalidade = nacionalidade;
     }
+
+    public Autor()
+    {
+    }
+
     public String getNacionalidade() {
         return nacionalidade;
     }
