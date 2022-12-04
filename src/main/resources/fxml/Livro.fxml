@@ -8,10 +8,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.ExemplarController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.LivroController">
     <children>
         <Button layoutX="-140.0" layoutY="32.0" mnemonicParsing="false" text="Button" />
-      <TableView fx:id="tabela" layoutX="8.0" layoutY="32.0" prefHeight="340.0" prefWidth="327.0">
+      <TableView fx:id="tabela" layoutX="8.0" layoutY="32.0" onKeyPressed="#tabela_KeyPressed" onMouseClicked="#tabela_MouseClicked" prefHeight="340.0" prefWidth="327.0">
         <columns>
           <TableColumn fx:id="colid" prefWidth="34.0" text="ID" />
           <TableColumn fx:id="colautor" prefWidth="102.0" text="Autor" />

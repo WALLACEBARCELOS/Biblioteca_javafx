@@ -1,40 +1,58 @@
 package br.edu.femass.model;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-
+@Entity
 public class Exemplar {
 
         @Id
-        @GeneratedValue
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-        private LocalDateTime dataAquisicao;
-        private String titulo;
-        @ManyToOne
+        private LocalDate dataAquisicao;
+
+        private String dataCompleta;
+        @ManyToOne(cascade = CascadeType.ALL)
         private Livro livro;
+
 
         public Exemplar(){
 
         }
 
-        public Exemplar(LocalDateTime dataAquisicao, String titulo) {
-                this.dataAquisicao = LocalDateTime.now();
-                this.titulo = livro.getTitulo();
+        public Exemplar(Livro livro) {
+                this.dataAquisicao = LocalDate.now();
+                this.livro = livro;
         }
 
-        public LocalDateTime getDataAquisicao() {
+
+        public LocalDate getDataAquisicao() {
                 return dataAquisicao;
         }
 
+        public void setDataAquisicao(LocalDate dataAquisicao) {
+                this.dataAquisicao = dataAquisicao;
+        }
 
-        public String getTitulo() {
-                return titulo;
+        public void setLivro(Livro livro) {
+                this.livro = livro;
+        }
+
+
+        public Long getId() {
+                return id;
+        }
+
+        public Livro getLivro() {
+                return livro;
+        }
+
+        public void setId(Long id) {
+                this.id = id;
         }
 
         public String toString() {
-                return (this.id + " - " + this.titulo);
+                return (this.id + " - " + this.livro);
         }
 
 

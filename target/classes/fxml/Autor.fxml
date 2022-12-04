@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AutorController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AutorController">
    <children>
       <ListView fx:id="LstAutor" layoutX="14.0" layoutY="17.0" onKeyPressed="#LstAutor_KeyPressed" onMouseClicked="#LstAutor_MouseClicked" prefHeight="236.0" prefWidth="200.0" />
       <Label layoutX="224.0" layoutY="72.0" text="Nome" />

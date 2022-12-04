@@ -18,6 +18,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.ComboBox;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 public class LivroController implements Initializable{
 
@@ -56,7 +58,7 @@ public class LivroController implements Initializable{
         Autor autor = cboAutor.getSelectionModel().getSelectedItem();
         livro.setTitulo(txtTitulo.getText());
         livro.setAno(txtAno.getText());
-        livro.setAutor(autor);
+        livro.setAutor(cboAutor.getSelectionModel().getSelectedItem());
 
         if (incluindo) {
             dao.inserir(livro);
@@ -67,6 +69,15 @@ public class LivroController implements Initializable{
         preencherCombo();
         editar(false);
     }
+    @FXML
+    private void tabela_KeyPressed(KeyEvent event){
+        exibirDados();
+    }
+    @FXML
+    private void tabela_MouseClicked(MouseEvent event){
+        exibirDados();
+    }
+
 
     @FXML
     private void Incluir_Click(ActionEvent event) {

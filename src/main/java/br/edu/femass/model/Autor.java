@@ -7,7 +7,7 @@ import java.util.List;
 @Entity
 public class Autor {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String sobrenome;

@@ -3,16 +3,16 @@ package br.edu.femass.gui;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-import br.edu.femass.dao.DaoAutor;
+import br.edu.femass.dao.DaoExemplar;
 import br.edu.femass.dao.DaoLivro;
 import br.edu.femass.model.Autor;
+import br.edu.femass.model.Exemplar;
 import br.edu.femass.model.Livro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.TableColumn;
@@ -22,11 +22,7 @@ import javafx.scene.control.ComboBox;
 public class ExemplarController implements Initializable{
 
     @FXML
-    private ComboBox<Autor> cboAutor;
-    @FXML
-    private TextField txtTitulo;
-    @FXML
-    private TextField txtAno;
+    private ComboBox<Livro> cboLivro;
     @FXML
     private Button BntAlterar;
     @FXML
@@ -36,32 +32,30 @@ public class ExemplarController implements Initializable{
     @FXML
     private Button BntGravar;
     @FXML
-    private TableView<Livro> tabela = new TableView<Livro>();
+    private TableView<Exemplar> tabela = new TableView<Exemplar>();
     @FXML
-    private TableColumn<Livro,String > colautor = new TableColumn<>();
+    private TableColumn<Exemplar, Long> colid = new TableColumn<>();
     @FXML
-    private TableColumn<Livro,String > colTitulo = new TableColumn<>();
+    private TableColumn<Exemplar,String > colData = new TableColumn<>();
     @FXML
-    private TableColumn<Livro,String > colAno = new TableColumn<>();
-    @FXML
-    private TableColumn<Livro,Long > colid = new TableColumn<>();
+    private TableColumn<Exemplar,String > colTitulo = new TableColumn<>();
 
-    private DaoLivro dao = new DaoLivro();
-    private DaoAutor daoAutor = new DaoAutor();
+    private DaoExemplar dao = new DaoExemplar();
+    private DaoLivro daoLivro = new DaoLivro();
     private Livro livro;
+    private Exemplar exemplar;
     private Boolean incluindo;
 
     @FXML
     private void Gravar_Click(ActionEvent event) {
-        Autor autor = cboAutor.getSelectionModel().getSelectedItem();
-        livro.setTitulo(txtTitulo.getText());
-        livro.setAno(txtAno.getText());
-        livro.setAutor(autor);
+        //Livro livro = cboLivro.getSelectionModel().getSelectedItem();
+        Exemplar exemplar = new Exemplar(cboLivro.getSelectionModel().getSelectedItem());
+        //exemplar.setLivro(cboLivro.getSelectionModel().getSelectedItem());
 
         if (incluindo) {
-            dao.inserir(livro);
+            dao.inserir(exemplar);
         } else {
-            dao.alterar(livro);
+            dao.alterar(exemplar);
         }
         preencherTabela();
         preencherCombo();
@@ -74,62 +68,54 @@ public class ExemplarController implements Initializable{
         preencherCombo();
         incluindo = true;
 
-        livro = new Livro();
-        txtTitulo.setText("");
-        txtAno.setText("");
-        txtTitulo.requestFocus();
+       // livro = new Livro();
+       // exemplar = new Exemplar();
+        //cboLivro.requestFocus();
         preencherTabela();
     }
 
     @FXML
     private void Alterar_Click(ActionEvent event) {
         editar(true);
-
-        incluindo = false;
-        preencherTabela();
+       // preencherTabela();
         preencherCombo();
+        incluindo = false;
+
     }
 
     @FXML
     private void Excluir_Click(ActionEvent event) {
-        dao.apagar(livro);
+        dao.apagar(exemplar);
         preencherTabela();
     }
 
     private void editar(boolean habilitar) {
-        cboAutor.setDisable(!habilitar);
-        txtAno.setDisable(!habilitar);
-        txtTitulo.setDisable(!habilitar);
+        cboLivro.setDisable(!habilitar);
         BntGravar.setDisable(!habilitar);
         BntAlterar.setDisable(habilitar);
         BntExcluir.setDisable(habilitar);
         BntIncluir.setDisable(habilitar);
 
     }
-
-
     private void exibirDados(){
-        this.livro = tabela.getSelectionModel().getSelectedItem();
+        this.exemplar = tabela.getSelectionModel().getSelectedItem();
 
-        if (livro == null ) return;
+        if (exemplar==null) return;
 
-        txtTitulo.setText(livro.getTitulo());
-        txtAno.setText(livro.getAno());
-        cboAutor.setValue(livro.getAutor());
     }
 
     private void preencherTabela(){
-        List<Livro> livros = dao.buscarTodosPorId();
+        List<Exemplar> exemplar = dao.buscarTodosPorId();
 
-        ObservableList<Livro> data = FXCollections.observableArrayList(livros);
+        ObservableList<Exemplar> data = FXCollections.observableArrayList(exemplar);
         tabela.setItems(data);
     }
 
     private void preencherCombo(){
-        List<Autor> autores = daoAutor.buscarTodosPorId();
+        List<Livro> livros = daoLivro.buscarTodosPorId();
 
-        ObservableList<Autor> data = FXCollections.observableArrayList(autores);
-        cboAutor.setItems(data);
+        ObservableList<Livro> data = FXCollections.observableArrayList(livros);
+        cboLivro.setItems(data);
 
     }
 
@@ -138,10 +124,10 @@ public class ExemplarController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        colautor.setCellValueFactory(new PropertyValueFactory<Livro, String>("autor"));
-        colTitulo.setCellValueFactory(new PropertyValueFactory<Livro, String>("titulo"));
-        colAno.setCellValueFactory(new PropertyValueFactory<Livro, String>("ano"));
-        colid.setCellValueFactory(new PropertyValueFactory<Livro, Long>("id"));
+        colid.setCellValueFactory(new PropertyValueFactory<Exemplar, Long>("id"));
+        colTitulo.setCellValueFactory(new PropertyValueFactory<Exemplar, String>("livro"));
+        colData.setCellValueFactory(new PropertyValueFactory<Exemplar, String>("dataAquisicao"));
+
         preencherTabela();
     }
 
