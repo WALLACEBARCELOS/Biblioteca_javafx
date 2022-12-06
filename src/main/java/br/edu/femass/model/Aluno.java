@@ -6,13 +6,11 @@ public class Aluno extends Leitor {
     private String matricula;
 
     public Aluno(){
-
+        setPrazoMaximoDevolucao(prazoMaximoDevolucao = 15);
     }
-    public Aluno (String nome, String endereco, String telefone){
-        this.nome = nome;
-        this.endereco = endereco;
-        this.telefone = telefone;
-        this.prazoMaximoDevolucao = 15;
+    public Aluno(String nome, String endereco, String telefone, String matricula) {
+        super(nome, endereco, telefone);
+        this.matricula = matricula;
     }
 
     public String getMatricula() {

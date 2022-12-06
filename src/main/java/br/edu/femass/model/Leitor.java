@@ -65,4 +65,8 @@ public class Leitor {
         this.prazoMaximoDevolucao = prazoMaximoDevolucao;
     }
 
+    @Override
+    public String toString() {
+        return this.nome;
+    }
 }

@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="524.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AlunoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="524.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.ProfessorController">
     <children>
         <Label layoutX="27.0" layoutY="61.0" text="Nome" />
         <Label layoutX="29.0" layoutY="137.0" text="Endereço" />
@@ -22,15 +22,15 @@
         <Button fx:id="BntExcluir" layoutX="293.0" layoutY="453.0" mnemonicParsing="false" onAction="#Excluir_Click" text="Excluir" />
         <TableView fx:id="tabela" layoutX="22.0" layoutY="243.0" onKeyPressed="#tabela_KeyPressed" onMouseClicked="#tabela_MouseClicked" prefHeight="200.0" prefWidth="481.0">
             <columns>
-            <TableColumn fx:id="colId" prefWidth="40.0" text="ID" />
-                <TableColumn fx:id="colMatricula" prefWidth="95.0" text="Matricula" />
+                <TableColumn fx:id="colId" prefWidth="40.0" text="ID" />
+                <TableColumn fx:id="colDisciplina" prefWidth="95.0" text="Disciplina" />
                 <TableColumn fx:id="colNome" prefWidth="115.0" text="Nome" />
                 <TableColumn fx:id="colEndereco" prefWidth="81.0" text="Endereço" />
                 <TableColumn fx:id="colTelefone" prefWidth="79.0" text="Telefone" />
-            <TableColumn fx:id="colPrazo" prefWidth="69.0" text="Prazo" />
+                <TableColumn fx:id="colPrazo" prefWidth="69.0" text="Prazo" />
             </columns>
         </TableView>
-      <Label layoutX="28.0" layoutY="98.0" text="Matricula" />
-      <TextField fx:id="TxtMatricula" disable="true" layoutX="125.0" layoutY="94.0" prefHeight="25.0" prefWidth="357.0" />
+        <Label layoutX="28.0" layoutY="98.0" text="Disciplina" />
+        <TextField fx:id="TxtDisciplina" disable="true" layoutX="125.0" layoutY="94.0" prefHeight="25.0" prefWidth="357.0" />
     </children>
 </Pane>

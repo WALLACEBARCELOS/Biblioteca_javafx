@@ -13,12 +13,12 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable {
+public class BibliotecarioController implements Initializable {
 
     @FXML
-    private void Atendente(ActionEvent event) {
+    private void BtnCadastrarAutor_Click(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Atendente.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Autor.fxml"));
 
             Scene scene = new Scene(root);
             scene.getStylesheets().add("/styles/Styles.css");
@@ -34,9 +34,9 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void Bibliotecario(ActionEvent event) {
+    private void BtnCadastrarLivro_Click(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Bibliotecario.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Livro.fxml"));
 
             Scene scene = new Scene(root);
             scene.getStylesheets().add("/styles/Styles.css");
@@ -50,6 +50,25 @@ public class MainController implements Initializable {
             System.out.println(e.getMessage());
         }
     }
+
+    @FXML
+    private void BtnCadastrarExemplar_Click(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Exemplar.fxml"));
+
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("/styles/Styles.css");
+            scene.getRoot().setStyle("-fx-font-family: 'serif'");
+
+            Stage stage = new Stage();
+            stage.setTitle("Cadastro de Exemplares");
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
 
 
     @Override

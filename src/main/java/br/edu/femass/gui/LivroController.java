@@ -68,6 +68,7 @@ public class LivroController implements Initializable{
         preencherTabela();
         preencherCombo();
         editar(false);
+        preencherTabela();
     }
     @FXML
     private void tabela_KeyPressed(KeyEvent event){
@@ -127,6 +128,7 @@ public class LivroController implements Initializable{
         txtTitulo.setText(livro.getTitulo());
         txtAno.setText(livro.getAno());
         cboAutor.setValue(livro.getAutor());
+        preencherTabela();
     }
 
     private void preencherTabela(){

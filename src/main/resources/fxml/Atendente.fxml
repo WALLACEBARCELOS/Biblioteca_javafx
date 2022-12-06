@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="388.0" prefWidth="316.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AtendenteController">
+    <children>
+        <Button layoutX="-140.0" layoutY="32.0" mnemonicParsing="false" text="Button" />
+        <Button layoutX="86.0" layoutY="132.0" mnemonicParsing="false" onAction="#BtnCadastrarAluno_Click" prefHeight="64.0" prefWidth="145.0" text="Casdastrar Aluno" />
+        <Button layoutX="86.0" layoutY="299.0" mnemonicParsing="false" onAction="#BtnCadastrarProfessor_Click" prefHeight="64.0" prefWidth="145.0" text="Casdastrar Professor" />
+        <Button layoutX="86.0" layoutY="216.0" mnemonicParsing="false" onAction="#BtnCadastrarEmprestimo_Click" prefHeight="64.0" prefWidth="145.0" text="Realizar Emprestimo" />
+      <Label layoutX="57.0" layoutY="28.0" prefHeight="58.0" prefWidth="203.0" text="ATENDENTE" textAlignment="CENTER">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+    </children>
+</Pane>

@@ -8,24 +8,21 @@ import javax.persistence.InheritanceType;
 @Entity
 public class Professor extends Leitor{
 
-    private String diciplina;
+    private String disciplina;
     public Professor(){
-
+        setPrazoMaximoDevolucao(prazoMaximoDevolucao = 30);
     }
 
     public Professor (String diciplina, String nome, String endereco, String telefone){
-        this.diciplina = diciplina;
-        this.nome = nome;
-        this.endereco = endereco;
-        this.telefone = telefone;
+        super(nome, endereco, telefone);
         this.prazoMaximoDevolucao = 30;
     }
 
-    public String getDiciplina() {
-        return diciplina;
+    public String getDisciplina() {
+        return disciplina;
     }
 
-    public void setDiciplina(String diciplina) {
-        this.diciplina = diciplina;
+    public void setDisciplina(String diciplina) {
+        this.disciplina = diciplina;
     }
 }
