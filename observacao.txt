@@ -1,4 +1,3 @@
 
-4   Verificar os botoes ALTERAR e EXCLUIR  do exemplar
-7   Atenção que somente podem ser cadastrados livros se os autores já estiverem no sistema.
 8   O bibliotecário tira uma listagem dos leitores em atraso.
+    condicional pegando a data de hoje e verificando se passou a data prevista

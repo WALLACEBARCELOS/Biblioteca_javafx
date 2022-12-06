@@ -69,11 +69,18 @@ public class EmprestimoController implements Initializable{
         Exemplar exemplar = cboExemplar.getSelectionModel().getSelectedItem();
         Professor professor = (Professor) cboProfessor.getSelectionModel().getSelectedItem();
         emprestimo = new Emprestimo(exemplar, professor);
-        dao.inserir(emprestimo);
+
+        if (incluindo) {
+            dao.inserir(emprestimo);
+        } else {
+            dao.alterar(emprestimo);
+        }
+        cboProfessor.setDisable(true);
         preencherTabela();
         preencherCombo();
 
-
+        editar(false);
+        BntGravar_Professor.setDisable(true);
 
     }
 
@@ -84,9 +91,19 @@ public class EmprestimoController implements Initializable{
         Exemplar exemplar = cboExemplar.getSelectionModel().getSelectedItem();
         Aluno aluno = (Aluno) cboAluno.getSelectionModel().getSelectedItem();
         emprestimo = new Emprestimo(exemplar, aluno);
-        dao.inserir(emprestimo);
+        if (incluindo) {
+            dao.inserir(emprestimo);
+        } else {
+            dao.alterar(emprestimo);
+        }
         preencherTabela();
         preencherCombo();
+
+        cboAluno.setDisable(true);
+        editar(false);
+
+        BntGravar_Aluno.setDisable(true);
+
     }
 
     @FXML
@@ -95,7 +112,6 @@ public class EmprestimoController implements Initializable{
         cboProfessor.setDisable(false);
         BntAluno.setDisable(true);
         cboAluno.setDisable(true);
-
         BntGravar_Professor.setDisable(false);
     }
     @FXML
@@ -138,6 +154,7 @@ public class EmprestimoController implements Initializable{
         cboExemplar.setDisable(!habilitar);
         BntAlterar.setDisable(habilitar);
         BntIncluir.setDisable(habilitar);
+
 
 
 

@@ -68,11 +68,13 @@ public class LivroController implements Initializable{
         preencherTabela();
         preencherCombo();
         editar(false);
+        txtAno.setDisable(true);
+        txtTitulo.setDisable(true);
         preencherTabela();
     }
     @FXML
     private void cboAutor_acao(ActionEvent event){
-        txtAno.setDisable(true);
+        txtAno.setDisable(!true);
         txtTitulo.setDisable(!true);
     }
     @FXML
@@ -114,6 +116,8 @@ public class LivroController implements Initializable{
     }
 
     private void editar(boolean habilitar) {
+        //txtAno.setDisable(!habilitar);
+        //txtTitulo.setDisable(!habilitar);
         cboAutor.setDisable(!habilitar);
         BntGravar.setDisable(!habilitar);
         BntAlterar.setDisable(habilitar);
@@ -149,8 +153,6 @@ public class LivroController implements Initializable{
 
     }
 
-
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -160,5 +162,4 @@ public class LivroController implements Initializable{
         colid.setCellValueFactory(new PropertyValueFactory<Livro, Long>("id"));
         preencherTabela();
     }
-
 }

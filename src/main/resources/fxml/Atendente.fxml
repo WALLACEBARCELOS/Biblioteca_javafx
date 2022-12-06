@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="388.0" prefWidth="316.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AtendenteController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="316.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AtendenteController">
     <children>
         <Button layoutX="-140.0" layoutY="32.0" mnemonicParsing="false" text="Button" />
         <Button layoutX="86.0" layoutY="132.0" mnemonicParsing="false" onAction="#BtnCadastrarAluno_Click" prefHeight="64.0" prefWidth="145.0" text="Casdastrar Aluno" />
@@ -16,5 +16,6 @@
             <Font size="36.0" />
          </font>
       </Label>
+      <Button layoutX="86.0" layoutY="384.0" mnemonicParsing="false" onAction="#BtnDevolverEmprestimo_Click" prefHeight="64.0" prefWidth="145.0" text="Devolver Empréstimo" />
     </children>
 </Pane>

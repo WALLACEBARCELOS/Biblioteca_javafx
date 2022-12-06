@@ -29,7 +29,7 @@
       <Button fx:id="BntProfessor" disable="true" layoutX="126.0" layoutY="137.0" mnemonicParsing="false" onAction="#Clicar_professor" text="Professor" />
       <Button fx:id="BntAluno" disable="true" layoutX="342.0" layoutY="137.0" mnemonicParsing="false" onAction="#Clicar_Aluno" text="Aluno" />
       <Button fx:id="BntGravar_Aluno" disable="true" layoutX="307.0" layoutY="216.0" mnemonicParsing="false" onAction="#Gravar_Click_Aluno" prefHeight="35.0" prefWidth="122.0" text="Registrar Aluno" />
-      <Label layoutX="144.0" layoutY="32.0" text="EMPRESTIMO" textAlignment="CENTER">
+      <Label layoutX="144.0" layoutY="32.0" text="EMPRESTIMO" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>

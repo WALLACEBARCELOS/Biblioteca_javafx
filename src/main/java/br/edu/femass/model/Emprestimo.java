@@ -69,6 +69,10 @@ public class Emprestimo {
         this.dataEmprestimo = dataEmprestimo;
     }
 
+    public void setExemplar(Exemplar exemplar) {
+        this.exemplar = exemplar;
+    }
+
     public void setDataPrevistaDevolucao(LocalDate dataPrevistaDevolucao) {
         this.dataPrevistaDevolucao = dataPrevistaDevolucao;
     }
@@ -77,4 +81,5 @@ public class Emprestimo {
     public boolean atraso(){
         return this.getDataPrevistaDevolucao().isBefore(LocalDate.now());
     }
+
 }

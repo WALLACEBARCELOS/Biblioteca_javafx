@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.ExemplarController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.ExemplarController">
     <children>
         <Button layoutX="-140.0" layoutY="32.0" mnemonicParsing="false" text="Button" />
         <TableView fx:id="tabela" layoutX="8.0" layoutY="32.0" prefHeight="340.0" prefWidth="297.0">
@@ -17,9 +17,7 @@
                 <TableColumn fx:id="colData" prefWidth="85.0" text="Data" />
             </columns>
         </TableView>
-        <Button fx:id="BntAlterar" layoutX="131.0" layoutY="383.0" mnemonicParsing="false" onAction="#Alterar_Click" text="Alterar" />
-        <Button fx:id="BntIncluir" layoutX="8.0" layoutY="383.0" mnemonicParsing="false" onAction="#Incluir_Click" text="Incluir" />
-        <Button fx:id="BntExcluir" layoutX="255.0" layoutY="383.0" mnemonicParsing="false" onAction="#Excluir_Click" text="Excluir" />
+        <Button fx:id="BntIncluir" layoutX="132.0" layoutY="382.0" mnemonicParsing="false" onAction="#Incluir_Click" text="Incluir" />
         <Label layoutX="353.0" layoutY="49.0" text="Livros" />
         <ComboBox fx:id="cboLivro" disable="true" layoutX="396.0" layoutY="45.0" prefHeight="25.0" prefWidth="268.0" />
         <Button fx:id="BntGravar" disable="true" layoutX="613.0" layoutY="87.0" mnemonicParsing="false" onAction="#Gravar_Click" text="Gravar" />

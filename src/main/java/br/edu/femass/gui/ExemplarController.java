@@ -74,26 +74,10 @@ public class ExemplarController implements Initializable{
         preencherTabela();
     }
 
-    @FXML
-    private void Alterar_Click(ActionEvent event) {
-        editar(true);
-       // preencherTabela();
-        preencherCombo();
-        incluindo = false;
-
-    }
-
-    @FXML
-    private void Excluir_Click(ActionEvent event) {
-        dao.apagar(exemplar);
-        preencherTabela();
-    }
 
     private void editar(boolean habilitar) {
         cboLivro.setDisable(!habilitar);
         BntGravar.setDisable(!habilitar);
-        BntAlterar.setDisable(habilitar);
-        BntExcluir.setDisable(habilitar);
         BntIncluir.setDisable(habilitar);
 
     }
