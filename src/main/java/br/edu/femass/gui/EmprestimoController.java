@@ -1,9 +1,5 @@
 package br.edu.femass.gui;
 
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
-
 import br.edu.femass.dao.*;
 import br.edu.femass.model.*;
 import javafx.collections.FXCollections;
@@ -11,10 +7,15 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import javax.swing.*;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
 public class EmprestimoController implements Initializable{
 
@@ -29,7 +30,9 @@ public class EmprestimoController implements Initializable{
     @FXML
     private Button BntIncluir;
     @FXML
-    private Button BntGravar;
+    private Button BntGravar_Professor;
+    @FXML
+    private Button BntGravar_Aluno;
     @FXML
     private Button BntProfessor;
     @FXML
@@ -40,7 +43,7 @@ public class EmprestimoController implements Initializable{
     @FXML
     private TableColumn<Emprestimo, Long> colid = new TableColumn<>();
     @FXML
-    private TableColumn<Exemplar,String > colExemplar = new TableColumn<>();
+    private TableColumn<Emprestimo,String > colExemplar = new TableColumn<>();
     @FXML
     private TableColumn<Emprestimo,String > colEmprestimo = new TableColumn<>();
     @FXML
@@ -54,35 +57,36 @@ public class EmprestimoController implements Initializable{
     private Leitor leitor;
     private Emprestimo emprestimo;
     private Aluno aluno;
+
     private Professor professor;
     private Exemplar exemplar;
     private Boolean incluindo;
 
     @FXML
-    private void Gravar_Click(ActionEvent event) {
+    private void Gravar_Click_Professor(ActionEvent event) {
 
         emprestimo = new Emprestimo();
         Exemplar exemplar = cboExemplar.getSelectionModel().getSelectedItem();
-        //Leitor leitor = cboLeitor.getSelectionModel().getSelectedItem();
-        //Emprestimo emprestimo = new Emprestimo(cboExemplar.getSelectionModel().getSelectedItem());
-        //exemplar.setLivro(cboLivro.getSelectionModel().getSelectedItem());
-
-
-        emprestimo = new Emprestimo(exemplar, aluno);
-            Aluno aluno = (Aluno) cboAluno.getSelectionModel().getSelectedItem();
-
-            emprestimo = new Emprestimo(exemplar, professor);
-            Professor professor = (Professor) cboProfessor.getSelectionModel().getSelectedItem();
-
-        if (incluindo) {
-            dao.inserir(emprestimo);
-        } else {
-            dao.alterar(emprestimo);
-        }
+        Professor professor = (Professor) cboProfessor.getSelectionModel().getSelectedItem();
+        emprestimo = new Emprestimo(exemplar, professor);
+        dao.inserir(emprestimo);
         preencherTabela();
         preencherCombo();
-        editar(false);
 
+
+
+    }
+
+    @FXML
+    private void Gravar_Click_Aluno(ActionEvent event) {
+
+        emprestimo = new Emprestimo();
+        Exemplar exemplar = cboExemplar.getSelectionModel().getSelectedItem();
+        Aluno aluno = (Aluno) cboAluno.getSelectionModel().getSelectedItem();
+        emprestimo = new Emprestimo(exemplar, aluno);
+        dao.inserir(emprestimo);
+        preencherTabela();
+        preencherCombo();
     }
 
     @FXML
@@ -92,6 +96,7 @@ public class EmprestimoController implements Initializable{
         BntAluno.setDisable(true);
         cboAluno.setDisable(true);
 
+        BntGravar_Professor.setDisable(false);
     }
     @FXML
     private void Clicar_Aluno(ActionEvent event) {
@@ -99,6 +104,7 @@ public class EmprestimoController implements Initializable{
         cboAluno.setDisable(false);
         BntProfessor.setDisable(true);
         cboProfessor.setDisable(true);
+        BntGravar_Aluno.setDisable(false);
 
     }
 
@@ -130,7 +136,6 @@ public class EmprestimoController implements Initializable{
         BntAluno.setDisable(!habilitar);
         BntProfessor.setDisable(!habilitar);
         cboExemplar.setDisable(!habilitar);
-        BntGravar.setDisable(!habilitar);
         BntAlterar.setDisable(habilitar);
         BntIncluir.setDisable(habilitar);
 
@@ -172,10 +177,11 @@ public class EmprestimoController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        colid.setCellValueFactory(new PropertyValueFactory<Emprestimo, Long>("id"));
+
         colEmprestimo.setCellValueFactory(new PropertyValueFactory<Emprestimo, String>("dataEmprestimo"));
-        colExemplar.setCellValueFactory(new PropertyValueFactory<Exemplar, String>("livro"));
+        colExemplar.setCellValueFactory(new PropertyValueFactory<Emprestimo, String>("exemplar"));
         colPrevisao.setCellValueFactory(new PropertyValueFactory<Emprestimo, String>("dataPrevistaDevolucao"));
+        colid.setCellValueFactory(new PropertyValueFactory<Emprestimo, Long>("id"));
 
         preencherTabela();
     }

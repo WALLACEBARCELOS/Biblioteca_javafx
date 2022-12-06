@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.EmprestimoController">
     <children>
@@ -22,11 +23,16 @@
         <Button fx:id="BntIncluir" layoutX="185.0" layoutY="605.0" mnemonicParsing="false" onAction="#Incluir_Click" text="Incluir" />
         <Label layoutX="28.0" layoutY="106.0" text="Exemplar" />
         <ComboBox fx:id="cboExemplar" disable="true" layoutX="83.0" layoutY="102.0" prefHeight="25.0" prefWidth="394.0" />
-        <Button fx:id="BntGravar" disable="true" layoutX="221.0" layoutY="216.0" mnemonicParsing="false" onAction="#Gravar_Click" prefHeight="35.0" prefWidth="92.0" text="Registrar" />
-      <Label layoutX="28.0" layoutY="175.0" text="Leitor" />
+        <Button fx:id="BntGravar_Professor" disable="true" layoutX="98.0" layoutY="216.0" mnemonicParsing="false" onAction="#Gravar_Click_Professor" prefHeight="35.0" prefWidth="122.0" text="Registrar Professor" />
       <ComboBox fx:id="cboProfessor" disable="true" layoutX="83.0" layoutY="171.0" prefHeight="25.0" prefWidth="152.0" />
       <ComboBox fx:id="cboAluno" disable="true" layoutX="292.0" layoutY="171.0" prefHeight="25.0" prefWidth="152.0" />
       <Button fx:id="BntProfessor" disable="true" layoutX="126.0" layoutY="137.0" mnemonicParsing="false" onAction="#Clicar_professor" text="Professor" />
       <Button fx:id="BntAluno" disable="true" layoutX="342.0" layoutY="137.0" mnemonicParsing="false" onAction="#Clicar_Aluno" text="Aluno" />
+      <Button fx:id="BntGravar_Aluno" disable="true" layoutX="307.0" layoutY="216.0" mnemonicParsing="false" onAction="#Gravar_Click_Aluno" prefHeight="35.0" prefWidth="122.0" text="Registrar Aluno" />
+      <Label layoutX="144.0" layoutY="32.0" text="EMPRESTIMO" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
     </children>
 </Pane>

@@ -71,6 +71,11 @@ public class LivroController implements Initializable{
         preencherTabela();
     }
     @FXML
+    private void cboAutor_acao(ActionEvent event){
+        txtAno.setDisable(true);
+        txtTitulo.setDisable(!true);
+    }
+    @FXML
     private void tabela_KeyPressed(KeyEvent event){
         exibirDados();
     }
@@ -110,8 +115,6 @@ public class LivroController implements Initializable{
 
     private void editar(boolean habilitar) {
         cboAutor.setDisable(!habilitar);
-        txtAno.setDisable(!habilitar);
-        txtTitulo.setDisable(!habilitar);
         BntGravar.setDisable(!habilitar);
         BntAlterar.setDisable(habilitar);
         BntExcluir.setDisable(habilitar);

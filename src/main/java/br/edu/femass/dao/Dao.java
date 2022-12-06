@@ -1,5 +1,7 @@
 package br.edu.femass.dao;
 
+import br.edu.femass.model.Emprestimo;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -36,6 +38,12 @@ public class Dao<E> {
     public void alterar(E entidade) {
         em.getTransaction().begin();
         em.merge(entidade);
+        em.getTransaction().commit();
+    }
+
+    public void inserirP(Emprestimo emprestimo) {
+        em.getTransaction().begin();
+        em.persist(emprestimo);
         em.getTransaction().commit();
     }
 }

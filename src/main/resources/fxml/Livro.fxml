@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.LivroController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.LivroController">
     <children>
         <Button layoutX="-140.0" layoutY="32.0" mnemonicParsing="false" text="Button" />
       <TableView fx:id="tabela" layoutX="8.0" layoutY="32.0" onKeyPressed="#tabela_KeyPressed" onMouseClicked="#tabela_MouseClicked" prefHeight="340.0" prefWidth="327.0">
@@ -27,7 +27,7 @@
       <Label layoutX="357.0" layoutY="107.0" text="Ano" />
       <TextField fx:id="txtTitulo" disable="true" layoutX="396.0" layoutY="74.0" prefHeight="25.0" prefWidth="268.0" />
       <TextField fx:id="txtAno" disable="true" layoutX="396.0" layoutY="103.0" prefHeight="25.0" prefWidth="268.0" />
-      <ComboBox fx:id="cboAutor" disable="true" layoutX="396.0" layoutY="45.0" prefHeight="25.0" prefWidth="268.0" />
+      <ComboBox fx:id="cboAutor" disable="true" layoutX="396.0" layoutY="45.0" onAction="#cboAutor_acao" prefHeight="25.0" prefWidth="268.0" />
       <Button fx:id="BntGravar" disable="true" layoutX="612.0" layoutY="144.0" mnemonicParsing="false" onAction="#Gravar_Click" text="Gravar" />
     </children>
 </Pane>

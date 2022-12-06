@@ -11,7 +11,7 @@
         <Button layoutX="86.0" layoutY="132.0" mnemonicParsing="false" onAction="#BtnCadastrarAluno_Click" prefHeight="64.0" prefWidth="145.0" text="Casdastrar Aluno" />
         <Button layoutX="86.0" layoutY="299.0" mnemonicParsing="false" onAction="#BtnCadastrarProfessor_Click" prefHeight="64.0" prefWidth="145.0" text="Casdastrar Professor" />
         <Button layoutX="86.0" layoutY="216.0" mnemonicParsing="false" onAction="#BtnCadastrarEmprestimo_Click" prefHeight="64.0" prefWidth="145.0" text="Realizar Emprestimo" />
-      <Label layoutX="57.0" layoutY="28.0" prefHeight="58.0" prefWidth="203.0" text="ATENDENTE" textAlignment="CENTER">
+      <Label layoutX="57.0" layoutY="16.0" prefHeight="58.0" prefWidth="203.0" text="ATENDENTE" textAlignment="CENTER">
          <font>
             <Font size="36.0" />
          </font>

@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -61,7 +60,7 @@ public class AtendenteController implements Initializable {
             scene.getRoot().setStyle("-fx-font-family: 'serif'");
 
             Stage stage = new Stage();
-            stage.setTitle("Cadastro de Professores");
+            stage.setTitle("Emprestimo de livro");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e){

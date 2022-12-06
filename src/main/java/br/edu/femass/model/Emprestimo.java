@@ -5,8 +5,10 @@ import java.time.LocalDate;
 
 @Entity
 public class Emprestimo {
+
+
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate dataEmprestimo;
     private LocalDate dataPrevistaDevolucao;
@@ -41,6 +43,14 @@ public class Emprestimo {
 
     public Leitor getLeitor() {
         return leitor;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setLeitor(Leitor leitor) {

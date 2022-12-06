@@ -1,8 +1,4 @@
-1	No banco de dados a tabela livro nao salva o nome do autor e o livro autor
-2	Criar tela com os sub-bototes de bibliotecario e atendente
-3	Criar tela para diferenciar tela de bibliotecario e atendente
+
 4   Verificar os botoes ALTERAR e EXCLUIR  do exemplar
-5   Tentar definir o prazo de emprestimo com minuto e hora
-6   Colocar a tabela de aluno para classificar por ID
 7   Atenção que somente podem ser cadastrados livros se os autores já estiverem no sistema.
 8   O bibliotecário tira uma listagem dos leitores em atraso.
